@@ -1,15 +1,13 @@
-version: '3.8'
 services:
-  server:
+  js-sandbox:
+    container_name: js-sandbox
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: js-playground
     ports:
       - "3000:3000"
     volumes:
-      - .:/app # Sincroniza el directorio actual con el contenedor
+      - .:/app
       - /app/node_modules # Evita conflictos con node_modules en el host
-    environment:
-      NODE_ENV: development # Define el entorno como desarrollo
-    restart: always # Reinicia el contenedor si se detiene inesperadamente
+    command: >
+      sh -c "npm install -g nodemon && npm run dev"
