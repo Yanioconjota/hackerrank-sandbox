@@ -97,7 +97,3 @@ docker-compose down
 
 - **Cambios no reflejados**:
   Asegúrate de haber guardado el archivo `index.js`. Si el problema persiste, verifica que el volumen esté correctamente montado.
-
----
-
-¡Eso es todo! Si tienes dudas o necesitas ayuda adicional, no dudes en preguntar. 😊
