@@ -1,11 +1,24 @@
-// Instalar Express (esto lo puedes añadir con npm install express)
 const express = require("express");
+const { runRemoteTests } = require('./test');
 const app = express();
 const PORT = 3000; // Cambia el puerto si lo prefieres
 
 // Ruta principal
-app.get("/", (req, res) => {
-  res.send("¡Hola desde Hackerrank Sandbox! Tu servidor está funcionando.");
+app.get("/", async (req, res) => {
+  try {
+    const result = await runRemoteTests(); // Llamar a la función exportada
+    res.json({
+      message: "¡Hola desde Hackerrank Sandbox! Tu servidor está funcionando.",
+      success: true,
+      result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error al ejecutar pruebas",
+      success: false,
+      error: error.message,
+    });
+  }
 });
 
 // Iniciar el servidor

@@ -1,11 +1,15 @@
 version: '3.8'
 services:
-  hackerrank:
-    build: .
-    volumes:
-      - .:/app
-      - /app/node_modules
-    working_dir: /app
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: js-playground
     ports:
       - "3000:3000"
-    command: ["npm", "start"]
+    volumes:
+      - .:/app # Sincroniza el directorio actual con el contenedor
+      - /app/node_modules # Evita conflictos con node_modules en el host
+    environment:
+      NODE_ENV: development # Define el entorno como desarrollo
+    restart: always # Reinicia el contenedor si se detiene inesperadamente
