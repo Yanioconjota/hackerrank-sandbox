@@ -1,13 +1,14 @@
-function plusMinus(arr) {
-  const n = arr.length;
-  const positive = arr.filter((x) => x > 0).length / n;
-  const negative = arr.filter((x) => x < 0).length / n;
-  const zeros = arr.filter((x) => x === 0).length / n;
+// Instalar Express (esto lo puedes añadir con npm install express)
+const express = require("express");
+const app = express();
+const PORT = 3000; // Cambia el puerto si lo prefieres
 
-  console.log(positive.toFixed(6));
-  console.log(negative.toFixed(6));
-  console.log(zeros.toFixed(6));
-}
+// Ruta principal
+app.get("/", (req, res) => {
+  res.send("¡Hola desde Hackerrank Sandbox! Tu servidor está funcionando.");
+});
 
-// Prueba con un ejemplo
-plusMinus([-4, 3, -9, 0, 4, 1]);
+// Iniciar el servidor
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});
