@@ -9,5 +9,4 @@ services:
     volumes:
       - .:/app
       - /app/node_modules # Evita conflictos con node_modules en el host
-    command: >
-      sh -c "npm install -g nodemon && npm run dev"
+    
