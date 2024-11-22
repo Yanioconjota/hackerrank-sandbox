@@ -1,7 +1,7 @@
 {
-  "name": "js-sandbox",
+  "name": "hackerrank-sandbox",
   "version": "1.0.0",
-  "description": "Ejecuta y recarga archivos test.js desde el navegador",
+  "description": "Ejecuta y recarga archivos index.js desde el navegador",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

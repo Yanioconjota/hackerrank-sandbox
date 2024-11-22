@@ -1,6 +1,6 @@
 services:
-  js-sandbox:
-    container_name: js-sandbox
+  hackerrank-sandbox:
+    container_name: hackerrank-sandbox
     build:
       context: .
       dockerfile: Dockerfile
